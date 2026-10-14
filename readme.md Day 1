@@ -1,0 +1,97 @@
+Daily progress
+Day	Date	Focus	Status
+01	2026-10-14	Sections 1–2: DevOps foundations, CI/CD, prerequisites and setup	In progress
+
+
+I update this table when I finish each session. Completed work, open questions, and practical evidence belong in the daily entry.
+Day 01 — Foundations and setup
+Today's target: Complete Sections 1 and 2, understand the delivery workflow, and verify the prerequisites for my Mac.
+Concepts to explain in my own words
+- DevOps: Shared development and operations practices that improve how software is delivered and run. Automation supports collaboration and feedback.
+- Continuous integration: Integrate small changes frequently and check them with automated builds and tests.
+- Continuous delivery: Keep validated changes ready for release through a repeatable process; a human production-release decision can remain.
+- Continuous deployment: Automatically release qualifying changes to production after required checks pass.
+- Artifacts: Versioned build outputs, such as a React build or container image, that can be tested and deployed.
+- Environment compatibility: My VM image, CPU architecture, and virtualisation provider need to match. My M3 Mac uses Apple Silicon.
+Connecting the concepts to a PERN application
+For a booking API change, a delivery workflow could fetch the source, install locked dependencies, run tests, build an artifact, deploy it to staging, wait for production approval, and then deploy and monitor it.
+This is a design exercise. It does not mean I have implemented the pipeline yet.
+Completion checklist
+- [ ] Finish Section 1 and the course quiz.
+- [ ] Explain CI, continuous delivery, and continuous deployment without referring to notes.
+- [ ] Finish the applicable Section 2 setup lessons.
+- [ ] Verify macOS, architecture, Git, and Homebrew.
+- [ ] Review the Apple Silicon VM path and record the selected provider.
+- [ ] Complete relevant account signups and AWS security/cost checks.
+- [ ] Record actual commands, results, and any unresolved issue.
+- [ ] Update this entry and mark the day complete.
+Verification commands
+Run these locally and record the actual results. They are suggested checks, not a log of commands already executed.
+uname -m
+sw_vers
+git --version
+command -v brew
+After Homebrew is installed and available:
+brew --version
+brew --prefix
+brew doctor
+Session evidence
+Check	Actual result
+macOS and CPU architecture	Not recorded yet
+Git version	Not recorded yet
+Homebrew version	Not recorded yet
+VM provider selected	Not selected yet
+Practical issue and resolution	Add after practice
+
+
+Next step: Begin the VM Setup section after confirming a compatible Apple Silicon setup.
+Repository organisation
+As the repository grows, I will keep:
+- README.md — overview and progress index.
+- daily-notes/day-01.md — a detailed entry for each day.
+- notes/ — my original study documents.
+- labs/ — my own practice code and configuration.
+- screenshots/ — useful evidence with personal details and secrets removed.
+The folders above describe the intended structure; they can be created as needed. Keep this README short by moving completed daily entries into daily-notes/ and linking them from the progress table.
+Reusable daily entry
+Copy this section into a new daily note and replace the bracketed text:
+# Day [NN] — [Topic]
+
+Date: [YYYY-MM-DD]
+Course section: [Section and lecture titles]
+Status: In progress
+
+## Today's goal
+[A specific outcome I want to achieve.]
+
+## What I learned
+- [Concept explained in my own words.]
+- [How it connects to a practical problem.]
+- [An important distinction or limitation.]
+
+## What I practised
+[What I actually did, including commands and relevant output.]
+
+## Issue and resolution
+- Problem: [Exact symptom or error.]
+- Investigation: [What I checked.]
+- Resolution: [What fixed it, or what remains unresolved.]
+
+## Evidence
+[Relative links to my own lab files or safe screenshots.]
+
+## Self check
+- [ ] I can explain the main idea without notes.
+- [ ] I repeated the practical task myself, if applicable.
+- [ ] I documented the actual result and open questions.
+
+## Next step
+[One concrete task for the next session.]
+References
+- Course outline
+- CI/CD concepts — AWS
+- Homebrew installation
+- Vagrant box architecture
+- AWS root-user security
+- Current AWS Free Tier terms
+These are my learning notes and original practice materials. This repository is not an official course resource and will not redistribute paid videos or instructor materials. Credentials and private configuration stay out of version control.
