@@ -1,192 +1,364 @@
-
 <div align="center">
 
-🚀 Day 01 · DevOps Foundations
-From building applications to delivering them reliably.
-<img src="https://img.shields.io/badge/DEVOPS-DAY%2001-2563EB?style=for-the-badge" alt="DevOps Day 01" />
-<img src="https://img.shields.io/badge/STATUS-IN%20PROGRESS-F59E0B?style=for-the-badge" alt="Status: In progress" />
-<img src="https://img.shields.io/badge/PLATFORM-macOS-111827?style=for-the-badge" alt="Platform: macOS" />
+# 🚀 Day 01 — DevOps Foundations
 
-Aditya · 14 October 2026 · Sections 1 & 2
-Course · Study Notes · Practice · Interview Prep
+### Understanding how code becomes a reliable application.
+
+![Day](https://img.shields.io/badge/Day-01-2563EB?style=for-the-badge)
+![Topic](https://img.shields.io/badge/Topic-DevOps_Foundations-7C3AED?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-In_Progress-F59E0B?style=for-the-badge)
+
+**Aditya · 14 October 2026**
+
+[🏠 Main Journey](../README.md) · [📚 Course](https://www.udemy.com/course/decodingdevops/)
+
 </div>
 
-🎯 Today's mission
-Understand what DevOps solves, distinguish continuous integration from delivery and deployment, and prepare my learning environment.
-I'm Aditya, a PERN stack developer learning how to take an application from source code to a reliable running service. This journal records the concepts I study, the tasks I practise, and the problems I work through.
-Learning session	Details
-Course	Decoding DevOps — Imran Teli
-Section 1	Introduction
-Section 2	Prerequisites Info & Setup
-My environment	MacBook Air M3 · macOS · VS Code
-My approach	Learn → practise → explain → document
-Session status	In progress — practical results still to be recorded
+---
 
+## 🎯 Today's Goal
 
-<a id="study-notes"></a>
-🧠 Study notes
-01 / DevOps starts with shared responsibility
-DevOps brings development and operations practices together to improve how software is built, tested, released, and operated. Collaboration, repeatable automation, and feedback help teams deliver changes reliably.
-My takeaway: Writing working code is one part of the job. Delivering it consistently and understanding its behaviour after release matter too.
+Understand the fundamentals of DevOps, learn the differences between CI and CD, and prepare my environment for upcoming practical sessions.
 
-A familiar example: My Express API works on my laptop but fails on a server because an environment variable is missing. Documented configuration, repeatable setup, and deployment checks can help prevent this problem.
-02 / Agile and DevOps work together
-Approach	Main emphasis
-Waterfall	Work organised into sequential phases
-Agile	Small iterations and frequent feedback
-DevOps	Collaboration throughout software delivery and operation
+**Course:** Decoding DevOps by Imran Teli  
+**Sections:** 1 — Introduction · 2 — Prerequisites Info & Setup  
+**Environment:** MacBook Air M3 · macOS · VS Code
 
+---
 
-03 / CI and CD are different parts of the workflow
-Practice	What it does	Production release
-Continuous integration	Integrates small changes frequently and checks them with automated builds and tests	Not required
-Continuous delivery	Keeps validated changes ready for release through a repeatable process	A human release decision can remain
-Continuous deployment	Releases qualifying changes after all required checks pass	Automatic
+## 🧠 1. What Is DevOps?
 
+DevOps brings development and operations practices together to improve how software is built, tested, deployed, and maintained.
 
-Remember: Pushing to GitHub alone is not CI. A green pipeline means its configured checks passed; it does not guarantee bug-free software.
-04 / Builds produce artifacts
-An artifact is an output that can be stored, tested, or deployed—for example, a React dist folder, a Java JAR, or a container image. Associating an artifact with a source commit helps identify exactly what was released.
-<details>
-<summary><strong>🔎 Example — a delivery workflow for my booking application</strong></summary>
+It combines:
 
-1. Retrieve the proposed source revision.
-2. Install dependencies using the lockfile.
-3. Run configured lint checks and automated tests.
-4. Build and label the artifact.
-5. Deploy it to staging and check the booking flow.
+- **Collaboration:** Share responsibility for delivering and running software.
+- **Automation:** Make repetitive tasks consistent and repeatable.
+- **Continuous feedback:** Use testing and operational information to improve.
+- **Small changes:** Make updates easier to review, release, and troubleshoot.
+
+> 💡 DevOps is more than a collection of tools. It is also about how people work together.
+
+### Connecting It to My Web Development Experience
+
+Imagine my Express application works on my laptop but fails after deployment because the server is missing an environment variable.
+
+DevOps practices help address this through documented configuration, repeatable environments, automated checks, and useful logs.
+
+---
+
+## 🔄 2. Waterfall, Agile, and DevOps
+
+| Approach | Main Focus |
+|---|---|
+| **Waterfall** | Work organised into sequential phases |
+| **Agile** | Small iterations and frequent feedback |
+| **DevOps** | Collaboration across software delivery and operation |
+
+Agile and DevOps can work together: a team can develop in short iterations while automating how changes are tested and delivered.
+
+---
+
+## ⚙️ 3. Continuous Integration
+
+**Continuous integration — CI** means integrating small code changes frequently and validating them with automated checks.
+
+A typical CI workflow:
+
+1. Retrieve the source code.
+2. Install dependencies.
+3. Run configured checks and tests.
+4. Build the application.
+5. Report success or failure.
+
+### Example
+
+For a change to my booking API, CI could:
+
+- Install Node.js dependencies.
+- Test valid and invalid booking requests.
+- Check code formatting or lint rules.
+- Build the React frontend.
+
+> 💡 Pushing code to GitHub alone is not CI. Automated validation must also be configured.
+
+---
+
+## 🚚 4. Continuous Delivery and Deployment
+
+| Concept | What Happens? | Production Approval |
+|---|---|---|
+| **Continuous integration** | Changes are integrated and checked automatically | Production deployment is not required |
+| **Continuous delivery** | Validated changes are kept ready to release | A human release decision can remain |
+| **Continuous deployment** | Qualifying changes are automatically released | No manual approval for each qualifying release |
+
+### Easy Way to Remember
+
+- **CI:** Integrate and check.
+- **Continuous delivery:** Ready to release.
+- **Continuous deployment:** Automatically release.
+
+### Example Delivery Workflow
+
+1. Push a code change.
+2. Run automated checks.
+3. Build a versioned artifact.
+4. Deploy to staging.
+5. Validate the application.
 6. Approve the production release.
-7. Deploy, check health, and monitor errors.
-This is a workflow design exercise; implementation is a future lab. Required test failures should block promotion. Database changes also need a migration and recovery plan.
-</details>
+7. Deploy and monitor.
 
-🧰 Tools on my radar
-These are tools and services introduced in the setup topics, not a list of completed installations.
-Tool	Why it matters
-Git / GitHub	Version history, repository hosting, and collaboration
-Homebrew	Managing packages on my Mac
-Chocolatey	The Windows package-management alternative
-Vagrant	Describing and managing VM environments
-Virtualisation provider	Running the guest operating system
-JDK / Maven	Java development and build tooling for relevant labs
-Docker Hub	Hosting and sharing container images
-SonarQube Cloud	Hosted code quality and security analysis
-AWS	Cloud infrastructure and services
+This is a workflow example, not a pipeline I have implemented yet.
 
+---
 
-Mac M3 consideration: The guest image, CPU architecture, and VM provider must be compatible. I will check the Apple Silicon instructions before using an image from an Intel-focused lesson.
-<a id="practice"></a>
-💻 Practice
-Check my local environment
-These are the checks to run; the results below are intentionally left open until I run them.
-# Check CPU architecture and macOS version
+## 📦 5. Important Terms
+
+| Term | Meaning | Example |
+|---|---|---|
+| **Repository** | Stores source code and its version history | A Git repository |
+| **Build** | Prepares runnable or distributable application output | Building a React application |
+| **Artifact** | An output that can be stored, tested, or deployed | A `dist` folder or container image |
+| **Pipeline** | An organised sequence of automated steps | Test → build → deploy |
+| **Staging** | An environment for validation before production | A test deployment of a booking app |
+| **Production** | The environment used by real users | A live rental website |
+| **Deployment** | Places an application version into an environment | Deploying an API to a server |
+
+---
+
+## 🧰 6. Tools and Prerequisites
+
+These are tools introduced or relevant to the setup topics. Their inclusion does not mean I have installed or mastered them.
+
+| Tool | Purpose |
+|---|---|
+| **Git** | Track changes and maintain version history |
+| **GitHub** | Host repositories and collaborate |
+| **Homebrew** | Manage software packages on macOS |
+| **Chocolatey** | Manage software packages on Windows |
+| **Vagrant** | Describe and manage VM environments |
+| **Virtualisation provider** | Run virtual machines |
+| **JDK** | Develop and run Java applications |
+| **Maven** | Build Java projects and manage dependencies |
+| **Docker Hub** | Store and share container images |
+| **AWS** | Access cloud infrastructure and services |
+
+### 🍎 My Mac M3 Consideration
+
+My Mac uses Apple Silicon. The VM provider and guest image need to support a compatible architecture.
+
+I should check the Apple Silicon instructions before using a VM image from an Intel-focused lesson.
+
+---
+
+## 💻 7. Environment Checks
+
+These are commands to practise. I will record the actual results after running them.
+
+### Check My Mac and Git
+
+```bash
+# Check CPU architecture
 uname -m
+
+# Check macOS version
 sw_vers
 
-# Check Git and locate Homebrew
+# Check Git version
 git --version
+
+# Locate Homebrew if available
 command -v brew
-After Homebrew is installed and available:
+```
+
+### Check Homebrew After Installation
+
+```bash
+# Display Homebrew version
 brew --version
+
+# Display installation prefix
 brew --prefix
+
+# Check for potential configuration issues
 brew doctor
-<details>
-<summary><strong>📌 What these commands tell me</strong></summary>
+```
 
-Command	What to look for
-uname -m	Normally arm64 in a native terminal on my M3
-sw_vers	Installed macOS version
-git --version	Available Git version
-command -v brew	Homebrew's executable path, if available
-brew --version	Installed Homebrew version
-brew --prefix	Installation prefix; normally /opt/homebrew on Apple Silicon
-brew doctor	Configuration issues that may need investigation
+### A Useful Distinction
 
+| Command | Purpose |
+|---|---|
+| `brew update` | Refresh Homebrew and package information |
+| `brew upgrade` | Upgrade installed packages |
 
-brew update refreshes Homebrew and package information. brew upgrade upgrades installed packages.
-</details>
+### My Results
 
-Evidence log
-Check	My actual result
-macOS version / architecture	To record
-Git version	To record
-Homebrew version	To record
-VM provider selected	To record
-Problem encountered	To record after practice
-Fix or next troubleshooting step	To record after practice
+| Check | Actual Result |
+|---|---|
+| CPU architecture | To record |
+| macOS version | To record |
+| Git version | To record |
+| Homebrew version | To record |
+| Selected VM provider | To record |
 
+---
 
-AWS setup checklist
-- [ ] Review the account plan and current Free Tier terms.
-- [ ] Secure the root user with MFA.
-- [ ] Prepare separate non-root access for routine work.
-- [ ] Configure appropriate billing alerts.
-- [ ] Understand that budget alerts are not a guaranteed spending cap.
-- [ ] Keep credentials and private configuration out of GitHub.
-<a id="interview-prep"></a>
-🎤 Interview prep
-Try answering each question aloud before expanding it.
+## ☁️ 8. AWS Setup Principles
+
+Before launching cloud labs, I need to understand access and costs.
+
+- Enable MFA for the root user.
+- Use separate non-root access for routine work.
+- Avoid creating root access keys.
+- Review the account's current plan and Free Tier terms.
+- Configure appropriate billing alerts.
+- Remove unneeded resources after practice.
+- Keep passwords, tokens, and private keys out of GitHub.
+
+> 💡 A budget alert is a notification, not a guaranteed spending cap.
+
+---
+
+## 🎤 9. Interview Preparation
+
+Try answering each question before expanding the answer.
+
 <details>
 <summary><strong>1. What is DevOps?</strong></summary>
 
-DevOps combines practices that help development and operations teams build, release, and operate software reliably. It emphasises shared responsibility, automation, and feedback.
+DevOps combines practices that help development and operations teams build, release, and run software reliably. It emphasises collaboration, automation, and feedback.
+
 </details>
 
 <details>
-<summary><strong>2. Is GitHub the same as Git?</strong></summary>
+<summary><strong>2. Is DevOps a tool?</strong></summary>
 
-No. Git is a distributed version control system. GitHub hosts Git repositories and provides collaboration features such as pull requests and reviews.
+No. Tools support DevOps, but DevOps also involves shared responsibility, team practices, and repeatable processes.
+
 </details>
 
 <details>
-<summary><strong>3. How do continuous delivery and deployment differ?</strong></summary>
+<summary><strong>3. What is continuous integration?</strong></summary>
 
-Continuous delivery keeps validated changes ready to release, with a human production-release decision possible. Continuous deployment releases qualifying changes automatically after the required checks pass.
+CI is the practice of integrating small changes frequently and checking them through automated builds and tests.
+
 </details>
 
 <details>
-<summary><strong>4. What happens when a required CI test fails?</strong></summary>
+<summary><strong>4. How do continuous delivery and deployment differ?</strong></summary>
 
-The pipeline should report the failure and block promotion. Investigate the cause, fix it, and rerun the checks rather than routinely bypassing them.
+Continuous delivery keeps validated changes ready to release, potentially with a human production-release decision. Continuous deployment automatically releases qualifying changes after the required checks pass.
+
 </details>
 
 <details>
 <summary><strong>5. What is a build artifact?</strong></summary>
 
-An output produced by a build that can be stored, tested, or deployed, such as a React build folder or a container image.
+A build artifact is an output that can be stored, tested, or deployed, such as a React build folder, Java JAR, or container image.
+
 </details>
 
 <details>
-<summary><strong>6. Why does an application work locally but fail on a server?</strong></summary>
+<summary><strong>6. How are Git and GitHub different?</strong></summary>
 
-Dependencies, runtime versions, environment variables, permissions, or network access may differ. Start with logs and compare the environments systematically.
+Git is a distributed version control system. GitHub hosts Git repositories and provides collaboration features.
+
 </details>
 
 <details>
-<summary><strong>7. How are Vagrant and a VM provider different?</strong></summary>
+<summary><strong>7. What should happen when a required CI test fails?</strong></summary>
 
-Vagrant describes and manages VM environments. The provider supplies the underlying capability to run the virtual machines.
+The pipeline should report the failure and block promotion. Investigate the cause, fix it, and rerun the checks.
+
 </details>
 
 <details>
-<summary><strong>8. Does an AWS budget alert automatically stop spending?</strong></summary>
+<summary><strong>8. Why might an application work locally but fail on a server?</strong></summary>
 
-No. Notifications can lag and are not a guaranteed spending cap. Check usage and remove unneeded resources after labs.
+The environments may differ in dependency versions, configuration, permissions, or network access. Start with logs and compare the environments systematically.
+
 </details>
 
-✅ Day 01 finish line
+<details>
+<summary><strong>9. How are Vagrant and a virtualisation provider different?</strong></summary>
+
+Vagrant manages VM environments through configuration and commands. The provider supplies the underlying capability to run the VMs.
+
+</details>
+
+<details>
+<summary><strong>10. Does a successful pipeline mean there are no bugs?</strong></summary>
+
+No. It means the configured checks passed. Missing tests or differences in real-world conditions can still expose problems.
+
+</details>
+
+---
+
+## 🔍 10. Troubleshooting Log
+
+| Item | My Notes |
+|---|---|
+| Problem encountered | To record after practice |
+| Exact error or symptom | To record |
+| What I investigated | To record |
+| Fix or next step | To record |
+| What I learned | To record |
+
+---
+
+## ✅ Day 01 Checklist
+
 - [ ] Complete Section 1 and its quiz.
-- [ ] Explain DevOps with an example from a PERN application.
+- [ ] Explain DevOps using a practical example.
 - [ ] Distinguish CI, continuous delivery, and continuous deployment.
-- [ ] Complete the applicable Section 2 setup lessons.
-- [ ] Run local checks and fill in the evidence log.
+- [ ] Complete the applicable Section 2 lessons.
+- [ ] Verify Git and Homebrew.
+- [ ] Record my environment details.
 - [ ] Review the Apple Silicon VM setup path.
-- [ ] Complete applicable account signups and security checks.
-- [ ] Answer the interview questions without looking.
-- [ ] Update this journal with actual results and mark the day complete.
+- [ ] Complete applicable account and security checks.
+- [ ] Practise the interview questions.
+- [ ] Update this journal with actual results.
 
+---
 
-📝 End-of-day reflection
-One concept I can now explain: Add after revision.
-One task I completed myself: Add the task and its result.
-One question I still have: Add the next thing to investigate.
+## 📝 Reflection
+
+**One concept I can explain confidently:**  
+_To add after revision._
+
+**One task I completed myself:**  
+_To add with its actual result._
+
+**One question I still have:**  
+_To add after practice._
+
+---
+
+## ⏭️ Next Step
+
+Begin the **VM Setup** section, select a compatible virtualisation provider and Linux image, and prepare my first Linux learning environment.
+
+---
+
+## 📚 References
+
+- [Decoding DevOps — Imran Teli](https://www.udemy.com/course/decodingdevops/)
+- [AWS CI/CD Concepts](https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-cicd-litmus/understanding-cicd.html)
+- [Homebrew Documentation](https://docs.brew.sh/)
+- [Vagrant Documentation](https://developer.hashicorp.com/vagrant/docs)
+- [AWS Root User Best Practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-best-practices.html)
+- [AWS Free Tier](https://aws.amazon.com/free/)
+
+These are original study notes aligned to course topics, with supplementary examples.
+
+---
+
+<div align="center">
+
+**Learn it. Practise it. Explain it.**
+
+Documented by **Aditya**  
+[← Back to My DevOps Journey](../README.md)
+
+</div>
