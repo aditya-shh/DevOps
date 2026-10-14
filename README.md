@@ -24,15 +24,7 @@ Using Git in development	Automating checks and delivery workflows
 Fixing issues during development	Diagnosing problems across environments
 
 
-<a id="current-focus"></a>
-📍 Current focus
-Day 01 · DevOps foundations and environment setup
-- Understanding DevOps and the software delivery lifecycle.
-- Comparing continuous integration, delivery, and deployment.
-- Reviewing tools, prerequisites, and cloud account setup.
-- Preparing a learning environment for my MacBook Air M3.
-➡️ [Open the Day 01 journal](./day-01/README.md)
-Progress here reflects what I have documented. Planned topics are learning goals, not claims of completed work or production experience.
+
 
 <a id="roadmap"></a>
 🗺️ Learning roadmap
@@ -50,5 +42,4 @@ Stage	What I'll learn	What I want to demonstrate	Status
 10 · Monitoring & reliability	Metrics, logs, alerts, Prometheus, Grafana	Observe application behaviour and investigate failures	⚪ Planned
 
 
-Status key: ⚪ Planned · 🟡 In progress · ✅ Completed and documented
 <a id="daily-journal"></a>
